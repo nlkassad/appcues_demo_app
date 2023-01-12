@@ -13,13 +13,13 @@ like Appcues.on so that they will be called every time the page loads.
 
 const App = () => {
   if (!window.localStorage.currentUser) { // persists the current user across page refresh
-    window.localStorage.setItem("currentUser", "testUser"); // if no current user, set userID to "testUser"
+    window.localStorage.setItem("currentUser", 1234); // if no current user, set userID to "testUser"
   }
 
   if (!window.localStorage.timestamp) { // persists the timestamp across refresh
     window.localStorage.setItem("timestamp", Date.now()); // if no timestamp, sets it to now
   }
-  
+
   const userId = window.localStorage.currentUser;
   const currentTime = parseInt(window.localStorage.timestamp);
 
@@ -38,10 +38,10 @@ const App = () => {
   window.Appcues.loadLaunchpad("#launchpad", { // loads Launchpad on this element
     position: "right"
   })
-  
-  return ( 
-    <BrowserRouter> 
-      <AppcuesRouter /> 
+
+  return (
+    <BrowserRouter>
+      <AppcuesRouter />
     </BrowserRouter>
   )
 }
